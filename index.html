@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ex51.html -->
+  <title>연습문제14 - 강아지블로그를 Flexbox로 구현하기</title>
+  <style>
+    * { margin: 0; padding: 0; 
+      overflow: hidden;
+      text-decoration: none;
+      /* border: 1px solid red; */
+    }
+    ul, ol {
+      text-decoration: none;
+    }
+    #wrap {
+      width: 1000px;
+      margin: 0 auto;
+    }
+    body {
+      background-color: aqua;
+    }
+    .box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #header {
+      padding: 20px;
+      justify-content: center;
+    }
+    h1 {
+      font-family: 'Times New Roman', Times, serif;
+    }
+    #nav {
+      justify-content: center;
+      background-color: #87e4e5;
+      padding: 5px;
+    }
+    #nav a:link {
+      color: white;
+      margin-right: 15px;
+    }
+    #nav a:visited {
+      color: white;
+    }
+    #main {
+      width: 1000px;
+      flex-direction: row;
+      vertical-align: middle;
+      padding: 15px;
+      justify-content: flex-start;
+    }
+    #section {
+      width: 650px;
+      padding: 10px;
+    }
+    #section2 {
+      margin-top: 10px;
+    }
+    #aside {
+      width: 180px;
+      height: 240px;
+      border: 1px solid green;
+      padding: 15px;
+      margin: 0px;
+    }
+    img {
+      width: 180px; height: 120px;
+      object-fit: cover;
+    }
+    #footer {
+      justify-content: center;
+      background-color: rgb(182, 182, 182);
+      padding: 15px;
+    }
+    #footer a {
+      margin-right: 15px;
+    }
+    #footer a:link {
+      color: black;
+    }
+    #footer a:visited {
+      color: black;
+    }
+    h3 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div class="box" id="header">
+      <h1>포메라니안-Pomeranian</h1>
+    </div>
+    <div class="box" id="nav">
+      <a href="#"><span>About</span></a>
+      <a href="#"><span>History</span></a>
+      <a href="#"><span>Information</span></a>
+      <a href="#"><span>SNS</span></a>
+    </div>
+    <div class="box" id="main">
+      <div class="box" id="aside">
+        <h4>Pomeranian</h4>
+        <img src="dog.jpg" alt="포메라니안" >
+        <ul>
+          <li><a href="#">기본특성</a></li>
+          <li><a href="#">단점</a></li>
+          <li><a href="#">키울 시 주의점</a></li>
+          <li><a href="#">파생 혼종견</a></li>
+        </ul>
+      </div>
+      <div class="box" id="section">
+        <h3>Pomeranian</h3> <br>
+        <p>개의 품종 중 하나. 원산지는 독일이며 전 세계적으로 사랑받는 반려견으로서 대중적으로 특히 유명한 견종이다. 스피츠 계열에 속하는 견종이며, 원래 스피츠와 사모예드에서 파생되었기 때문에 츠버그스피츠라 불리기도 한다.
+          포메라이언(안)이 아니라 포메라니안이다. 특유의 복실복실한 털이 사자 갈기를 연상시키는지 의외로 많은 사람들이 포메라이언이라고 한다. 뭐 발음이 애매하면 라니안이 그렇게 들리기도 하고. 포메라니안을 키우는 견주조차도 제대로 모르는 경우가 많다. 심지어 그 유명한 강형욱조차 그렇게 발음한다. 포메라니안을 키우는 보호자들조차도 대부분 '포메', '포메' 그럴 뿐, 풀명칭을 물어보면 더듬거리며 부정확하게 알고 있는 경우가 많다.</p>
+        <br><p>전형적인 초소형견이며, 모량이 아주 풍성한 이중모가 포메라니안의 가장 큰 특징이다. 모량이 매우 풍부한데다가, 스피츠 계열이라 직모인 이중모이기 때문에 다른 장모종과 달리 털이 몸에 붙지 않고 붕 떠서 솜뭉치와 같은 외모를 가지고 있는 것이 특징이다. 이러한 털복숭이 같은 귀여운 외모 덕분에 세계적으로 큰 인기를 얻고 있다. 성견이 되면 이마 털이 짧아지고 가슴털이 워낙 풍성해지기 때문에 조금 지저분해 보이기도 하지만 근래에 곰돌이컷이라는 미용 스타일이 인기를 끌면서 포메라니안의 지저분한 가슴털을 집중적으로 쳐내고 귀여움을 더해주어 포메라니안의 인기가 더욱 상승하고 있다. 때문에 이전에는 포메라니안이 여우, 너구리를 닮았다는 이야기가 상대적으로 많았으나 요즘은 곰을 닮았다는 소리를 많이 듣는 편이다. 다만 특유의 풍성한 털 때문에 애완견 중에서는 가장 많은 털을 날리며 털관리에 가장 많은 신경을 써야 하는 견종이다. 게다가 미용을 잘못하면 이중모가 제대로 다시 자라는데 시간이 상당히 걸리는 편이라 더욱 미용에 많이 신경을 쓰게 된다.</p>
+        <p id="section2">참조: 나무위키 - 포메라니안</p>
+      </div>      
+    </div>
+    <div class="box" id="footer">
+      <a href="#"><span>Subscribe</span></a>
+      <a href="#"><span>About Author</span></a> 
+      <a href="#"><span>Send us Email</span></a>
+    </div>
+  </div>
+</body>
+</html>
